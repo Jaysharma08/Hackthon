@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trip History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Trip History</h2>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="history-container">
+    {% for trip in trips %}
+    <div class="history-card">
+        <h3>Driver: {{ trip.driver }}</h3>
+        <p>Start: {{ trip.start_time }}</p>
+        <p>End: {{ trip.end_time }}</p>
+        <p>Distance: {{ trip.distance }} km</p>
+        <p>Avg Speed: {{ trip.avg_speed }} km/h</p>
+        <p>Total Potholes: {{ trip.total_potholes }}</p>
+        <p>Safe: {{ trip.safe }}</p>
+        <p>Unsafe: {{ trip.unsafe }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

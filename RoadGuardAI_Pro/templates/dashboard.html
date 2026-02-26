@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RoadGuard AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🚍 RoadGuard AI</h2>
+    <div>
+        <a href="/history">History</a>
+        <a href="/admin">Admin</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="dashboard-container">
+
+    <div class="stats-grid">
+        <div class="card">
+            <h3>Live Speed</h3>
+            <h1 id="speed">0 km/h</h1>
+        </div>
+
+        <div class="card">
+            <h3>Road Status</h3>
+            <h1 id="status" class="safe">SAFE</h1>
+        </div>
+
+        <div class="card">
+            <h3>Total Potholes</h3>
+            <h1 id="potholes">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>Distance Covered</h3>
+            <h1 id="distance">0 km</h1>
+        </div>
+    </div>
+
+    <div class="trip-buttons">
+        <button onclick="startTrip()" class="start-btn">Start Trip</button>
+        <button onclick="endTrip()" class="end-btn">End Trip</button>
+    </div>
+
+    <div class="chart-section">
+        <canvas id="speedChart"></canvas>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

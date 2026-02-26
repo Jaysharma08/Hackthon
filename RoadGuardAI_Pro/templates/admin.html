@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Admin Dashboard</h2>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="admin-container">
+
+    <div class="admin-stats">
+        <div class="card">
+            <h3>Total Trips</h3>
+            <h1>{{ trips|length }}</h1>
+        </div>
+
+        <div class="card">
+            <h3>Total Potholes</h3>
+            <h1>
+                {{ trips | sum(attribute='total_potholes') }}
+            </h1>
+        </div>
+
+        <div class="card">
+            <h3>Total Distance</h3>
+            <h1>
+                {{ trips | sum(attribute='distance') | round(2) }} km
+            </h1>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
